@@ -1,0 +1,3 @@
+set :user, "vagrant"
+server "192.168.33.101", :app, :web, :db, :primary => true
+set :deploy_to, "git@github.com:vibhoo/rails4_chat.git"

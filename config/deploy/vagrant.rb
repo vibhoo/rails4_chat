@@ -1,9 +1,4 @@
 set :user, "vagrant"
-set :stage, :vagrant
-set :ssh_options, {
- keys: %w(~/.vagrant.d/insecure_private_key),
- forward_agent: true
-}
-role :all, "192.168.33.101", primary: true
-
-set :domain_name, "domain.local"
+set :ssh_options, {keys: ['~/.vagrant.d/insecure_private_key']}
+server "192.168.33.101", user: "vagrant", roles: %w[web app db], primary: true
+set :deploy_to, "/var/www/practise_rails4chat"
